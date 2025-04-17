@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   if (!email || !code) {
     alert("الرجاء تسجيل الدخول أولاً.");
-    window.location.href = "login.html";
+    window.location.href = "index.html";
     return;
   }
 
@@ -12,13 +12,12 @@ document.addEventListener("DOMContentLoaded", async () => {
     const response = await fetch(`https://script.google.com/macros/s/AKfycbwrrXbXuI_TQIyGwbCSbbcZUr5vBxx6aAfMEdCJYd7sJNowU0LZtaxRm6LnPkGhc0uobg/exec?email=${email}&code=${code}`);
     const data = await response.json();
 
-    document.getElementById("progress").style.width = data.ProjectProgress + "%";
-    document.getElementById("progress").textContent = data.ProjectProgress + "%";
-    document.getElementById("stage").textContent = data.CurrentStage || "لم يتم التحديد";
+    const progress = data["ProjectProgress"] || 0;
+    document.getElementById("progressBar").style.width = progress + "%";
+    document.getElementById("progressValue").textContent = progress + " ٪";
 
-    if (data.Image1) document.getElementById("img1").src = data.Image1;
-    if (data.Image2) document.getElementById("img2").src = data.Image2;
+    document.getElementById("currentStage").textContent = data["Reports"] || "لم يتم التحديد بعد";
   } catch (e) {
-    alert("خطأ في تحميل بيانات المشروع.");
+    alert("حدث خطأ أثناء تحميل البيانات.");
   }
 });
