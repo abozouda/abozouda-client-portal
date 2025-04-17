@@ -11,8 +11,8 @@ document.addEventListener("DOMContentLoaded", async () => {
   try {
     const response = await fetch(`https://script.google.com/macros/s/AKfycbwrrXbXuI_TQIyGwbCSbbcZUr5vBxx6aAfMEdCJYd7sJNowU0LZtaxRm6LnPkGhc0uobg/exec?email=${email}&code=${code}`);
     const data = await response.json();
-    document.getElementById("tips").innerHTML = data["DailyTip"] || "لا توجد بيانات متاحة.";
+    document.getElementById("expenses").innerHTML = data["Expenses"] || "لا توجد بيانات متاحة.";
   } catch (e) {
-    document.getElementById("tips").textContent = "حدث خطأ أثناء تحميل البيانات.";
+    document.getElementById("expenses").textContent = "حدث خطأ أثناء تحميل البيانات.";
   }
 });
