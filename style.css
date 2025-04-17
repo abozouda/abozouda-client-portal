@@ -53,9 +53,15 @@ body.futuristic {
   background: #ff4444;
 }
 .logo {
-  width: 80px;
-  margin-bottom: 20px;
+  width: 120px;
+  max-width: 90%;
+  margin-bottom: 25px;
+  transition: transform 0.3s ease;
 }
+.logo:hover {
+  transform: scale(1.05);
+}
+
 footer {
   margin-top: 20px;
   color: #777;
