@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     document.getElementById("progressBar").style.width = progress + "%";
     document.getElementById("progressValue").textContent = progress + " ٪";
 
-  document.getElementById("currentStage").textContent = data["CurrentStage"] || "لم يتم التحديد بعد";
+ document.getElementById("currentStage").textContent = String(data["CurrentStage"] || "لم يتم التحديد بعد");
   } catch (e) {
     alert("حدث خطأ أثناء تحميل البيانات.");
   }
