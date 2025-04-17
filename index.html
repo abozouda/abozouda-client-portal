@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>تسجيل دخول | أبوزودة</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>تسجيل دخول العميل</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body class="futuristic">
   <div class="login-container">
@@ -14,22 +14,11 @@
     <input type="email" id="email" placeholder="البريد الإلكتروني" />
     <input type="text" id="clientCode" placeholder="كود العميل" />
     <button onclick="loginClient()">دخول ➔</button>
+    <p id="errorMessage" class="error-message"></p>
     <footer>
       <small>© 2100 Abozouda Architecture & Design</small>
     </footer>
   </div>
-  <script>
-    function loginClient() {
-      const email = document.getElementById("email").value;
-      const code = document.getElementById("clientCode").value;
-      if (email && code) {
-        localStorage.setItem("client_email", email);
-        localStorage.setItem("client_code", code);
-        window.location.href = "dashboard.html";
-      } else {
-        alert("يرجى إدخال البريد الإلكتروني والكود.");
-      }
-    }
-  </script>
+  <script src="login.js"></script>
 </body>
 </html>
