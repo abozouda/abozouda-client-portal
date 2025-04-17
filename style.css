@@ -1,68 +1,130 @@
 body.futuristic {
   margin: 0;
-  padding: 0;
-  background: linear-gradient(135deg, #000000, #1c1c1c);
   font-family: 'Cairo', sans-serif;
-  color: white;
+  background: linear-gradient(135deg, #000000, #0f0f0f);
+  color: #fff;
+}
+
+header {
   display: flex;
   align-items: center;
-  justify-content: center;
-  height: 100vh;
+  justify-content: space-between;
+  background-color: rgba(255,255,255,0.05);
+  padding: 20px 40px;
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid red;
 }
-.login-container {
-  background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(10px);
-  padding: 40px;
-  border-radius: 20px;
-  text-align: center;
-  width: 90%;
-  max-width: 400px;
-  border: 2px solid red;
-  box-shadow: 0 0 25px rgba(255, 0, 0, 0.3);
+
+.logo {
+  height: 70px;
 }
-.login-container h1 {
-  margin-top: 0;
+
+h1 {
   font-size: 28px;
   color: red;
 }
-.login-container p {
-  color: #ccc;
-  margin-bottom: 20px;
+
+.content {
+  max-width: 900px;
+  margin: auto;
+  padding: 30px 20px;
 }
-.login-container input {
-  width: 100%;
-  padding: 12px;
-  margin-bottom: 15px;
-  border: none;
-  border-radius: 8px;
-  background: #1a1a1a;
-  color: white;
-  font-size: 16px;
+
+.card {
+  margin-bottom: 30px;
+  padding: 25px;
+  border-radius: 16px;
 }
-.login-container button {
-  background: red;
-  color: white;
+
+.glass {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 0, 0, 0.3);
+  box-shadow: 0 4px 20px rgba(255,0,0,0.1);
+}
+
+.progress-container {
+  background: #222;
+  height: 24px;
+  border-radius: 12px;
+  overflow: hidden;
+  margin-top: 10px;
+}
+
+.progress-bar {
+  height: 100%;
+  background: linear-gradient(to right, #ff0000, #ff4d4d);
+  width: 0%;
+  transition: width 0.8s ease;
+  text-align: center;
+  line-height: 24px;
+  font-weight: bold;
+  color: #fff;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+}
+
+.button {
   padding: 12px 24px;
   border: none;
-  font-size: 18px;
-  border-radius: 12px;
-  cursor: pointer;
-  transition: background 0.3s ease;
+  border-radius: 10px;
+  background: #111;
+  color: white;
+  font-size: 16px;
+  text-decoration: none;
+  transition: all 0.3s ease;
 }
-.login-container button:hover {
-  background: #ff4444;
+
+.button:hover {
+  background: red;
 }
-.logo {
-  width: 80px;
-  margin-bottom: 20px;
+
+.whatsapp-float {
+  position: fixed;
+  left: 20px;
+  bottom: 20px;
+  background: #25D366;
+  padding: 12px 20px;
+  color: white;
+  border-radius: 50px;
+  font-weight: bold;
+  text-decoration: none;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  z-index: 999;
 }
-footer {
-  margin-top: 20px;
-  color: #777;
-  font-size: 12px;
-}
-.error-message {
-  color: red;
-  font-size: 14px;
-  margin-top: 10px;
+
+/* ✅ Responsive Design للموبايل */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .logo {
+    height: 60px;
+    margin-bottom: 10px;
+  }
+
+  .content {
+    padding: 20px 10px;
+  }
+
+  .card {
+    padding: 20px;
+  }
+
+  h1 {
+    font-size: 22px;
+  }
+
+  .button {
+    width: 100%;
+    font-size: 14px;
+    padding: 10px;
+  }
 }
